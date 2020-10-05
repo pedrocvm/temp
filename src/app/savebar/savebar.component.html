@@ -1,0 +1,155 @@
+<div class="row">
+  <div class="col-12">
+    <div class="navbarContainer">
+      <nav class="navbar fixed-top navbar-dark navbar-expand-lg">
+        <a class="navbar-brand" href="javascript: void(0)">Easy Builder</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#conteudoNavbarSuportado"
+          aria-controls="conteudoNavbarSuportado"
+          aria-expanded="false"
+          aria-label="Alterna navegação"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse navItems"
+          id="conteudoNavbarSuportado"
+        >
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a href="javascript:void(0)" class="nav-link">
+                <i class="fa fa-file"></i> New Project
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link text-warning"
+                target="_blank"
+                href="javascript:void(0)"
+                style="color: yellow"
+                >TUTORIALS</a
+              >
+            </li>
+
+            <li class="nav-item dropdown" uib-dropdown="">
+              <a
+                class="nav-link dropdown-toggle"
+                href="javascript:void(0)"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="ng-binding">Username</span></a
+              >
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="javascript:void(0)"
+                  >My Account</a
+                >
+                <a class="dropdown-item" href="javascript:void(0)"
+                  >Change Password</a
+                >
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:void(0)">Logout</a>
+              </div>
+            </li>
+
+            <li class="navbar-item">
+              <a
+                title="Give us a FeedBack"
+                class="nav-link"
+                href="javascript:void(0)"
+              >
+                <i class="fa fa-comment" ng-click="$ctrl.feedBack()"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- <div class="container-fluid shortcutsContainer">
+      <button
+        class="btn btn-secondary shortcutBtn"
+        type="button"
+        *ngFor="let btn of shortcutList"
+        (click)="btn.Callback()"
+        style="background-color: {{ btn.ButtonBgColor }};
+        min-width: {{ btn.ButtonSize }}px;
+        max-width: {{ btn.ButtonSize }}px;
+        height: {{ btn.ButtonSize }}px;"
+      >
+        <span>
+          <i class="{{ btn.Icon }}"></i>
+          {{ btn.Name }}
+        </span>
+      </button>
+    </div> -->
+    <div class="container-fluid createMenuContainer">
+      <button class="btn btn-success addRegister" (click)="handleAddBtn()">
+        <span>New Register</span>
+      </button>
+      <button class="btn btn-success editRegister" (click)="handleEditBtn()">
+        <span>Edit Register</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="modal-footer formButtonsContainer">
+  <button
+    *ngFor="let button of buttonPreview"
+    type="button"
+    class="register btn btn-primary {{button.caption + 'btn'}}"
+    (click)="button.click()"
+    [hidden]="button.isVisible"
+  >
+    {{ button.caption }}
+  </button>
+</div> -->
+<div class="action-container modal-footer formButtonsContainer">
+  <div
+    class="action-btn"
+    *ngFor="let button of addButtons"
+    [style.display]="isVisibleEdit ? 'none' : ''"
+  >
+    <button
+      class="register btn btn-primary {{ button.caption + 'btn' }}"
+      (click)="button.click()"
+      *ngIf="isVisibleAdd"
+    >
+      <i class="{{ button.icon }}"></i>
+      <span>{{ button.caption }}</span>
+    </button>
+  </div>
+
+  <div
+    class="action-btn"
+    *ngFor="let button of editButtons"
+    [style.display]="isVisibleAdd ? 'none' : ''"
+  >
+    <button
+      class="register btn btn-primary {{ button.caption + 'btn' }}"
+      (click)="button.click()"
+      *ngIf="isVisibleEdit"
+    >
+      <i class="{{ button.icon }}"></i>
+      <span>{{ button.caption }}</span>
+    </button>
+  </div>
+  <button 
+    class="register btn btn-primary " 
+    (click)="handleSidebarCollapsed()"
+    *ngIf="isMobile">
+      <i class="fas fas fa-bars"></i>
+      <span>Menu</span>
+  </button>
+</div>
+
+<app-sidebar></app-sidebar>

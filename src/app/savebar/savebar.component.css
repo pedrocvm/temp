@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  color: lightgrey;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a:hover {
+  color: #adadad;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbarContainer nav {
+  width: 100%;
+  height: 56px;
+  background-color: #343a40;
+}
+
+.navbarContainer nav a {
+  padding-left: 16px;
+}
+
+.navbarContainer nav ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+}
+
+.navbar-toggler {
+  margin-right: 15px;
+}
+
+.collapsing,
+.show {
+  height: 100px;
+  background-color: #343a40;
+  display: flex;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #383838;
+}
+
+.container-fluid {
+  position: relative;
+  top: 156px;
+  margin-bottom: 50px;
+  padding: 0 50px;
+  text-align: justify;
+}
+
+.shortcutsContainer {
+  width: calc(100% - 100px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.shortcutsContainer button {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.shortcutsContainer button:hover {
+  filter: opacity(0.8);
+}
+
+.shortcutsContainer button span {
+  font-size: 22pt;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Bebas Neue", cursive;
+}
+
+.shortcutsContainer button span i {
+  font-size: 70pt;
+  padding-bottom: 10px;
+}
+
+.modal-footer {
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 56px;
+  padding-right: 20px;
+  border: 1px solid lightgrey;
+  background-color: #fcfcfc;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 76px;
+}
+
+.collapsed {
+  padding-left: 306px;
+}
+
+.modal-footer button {
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+/* BOTÕES DE REGISTRO */
+.createMenuContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.addRegister {
+  background-color: rgb(22, 199, 161);
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.addRegister:active {
+  background-color: rgb(34, 151, 126) !important;
+  transform: scale(1.1);
+}
+
+.editRegister {
+  background-color: rgb(255, 230, 0);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #000;
+  border-color: lightgrey;
+  transition: all 0.3s;
+}
+
+.editRegister:active {
+  background-color: #f1c603 !important;
+  color: #000 !important;
+  transform: scale(1.1);
+}
+
+.addRegister:focus,
+.editRegister:focus {
+  box-shadow: none;
+}
+
+.Cancelbtn {
+  background-color: #f1c603;
+  color: #000;
+}
+
+.Cancelbtn:active {
+  background-color: #f1c603 !important;
+  color: #000 !important;
+}
+
+.register i {
+  display: none;
+}
+
+.Menubtn {
+  display: none;
+}
+
+.header-collapsed {
+  max-width: 70px;
+  min-width: 70px;
+}
+
+.header-collapsed .header-menu {
+  max-width: 70px;
+  min-width: 70px;
+}
+
+.header-collapsed .sidebar-btn {
+  right: 25px;
+}
+
+.wrapper.collapsed .bg-dark {
+  max-width: 70px;
+  min-width: 70px;
+}
+
+/* MOBILE CSS */
+@media (max-width: 992px) {
+  .modal-footer {
+    height: 80px;
+    justify-content: center;
+    top: calc(100% - 78px);
+    background-color: #2b3035;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .register {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 14pt;
+  }
+
+  .register:focus,
+  .register:active {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #f1c603 !important;
+  }
+
+  .register i {
+    display: block;
+  }
+
+  .wrapper.collapsed .sidebar {
+    left: -70px;
+    z-index: 1;
+  }
+}

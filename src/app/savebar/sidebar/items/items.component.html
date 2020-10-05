@@ -1,0 +1,20 @@
+<a class="listMenu">
+  <i class="{{ ezSubmenuList.Icon }} menuIcon"></i>
+  <span class="menuItem"> {{ ezSubmenuList.MenuGroup }} </span>
+  <i class="chevron fas {{ezSubmenuList.isCollapsed ? 'fa-chevron-up' : 'fa-chevron-down'}} "></i>
+</a>
+
+<ez-side-menu
+  *ngFor="let item of ezSubmenuList.Submenus"
+  [ezSubmenuList]="item"
+  class="submenuItem"
+>
+</ez-side-menu>
+
+<a
+  *ngFor="let item of ezSubmenuList.Items"
+  (click)="click(item)"
+  class="menuItem item"
+>
+  {{ item.Title }}
+</a>
